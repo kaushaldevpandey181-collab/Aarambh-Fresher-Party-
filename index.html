@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#100a2b" />
+<title>Aarambh 2026 | Fresher Party</title>
+<style>
+:root{--bg:#09071b;--panel:rgba(23,17,57,.91);--purple:#a855f7;--blue:#38bdf8;--white:#f8f7ff;--muted:#c4bddf}
+*{box-sizing:border-box} body{margin:0;min-height:100vh;font-family:Inter,system-ui,-apple-system,Segoe UI,sans-serif;color:var(--white);background:radial-gradient(circle at 15% 15%,#39206f 0,transparent 32%),radial-gradient(circle at 90% 80%,#073c68 0,transparent 35%),linear-gradient(135deg,#080617,#100a2b 55%,#071526);display:grid;place-items:center;padding:18px;overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;background-image:linear-gradient(#ffffff06 1px,transparent 1px),linear-gradient(90deg,#ffffff06 1px,transparent 1px);background-size:34px 34px;mask-image:linear-gradient(to bottom,black,transparent)}
+.wrap{width:min(100%,560px);position:relative}.brand{text-align:center;font-size:.76rem;letter-spacing:.24em;text-transform:uppercase;color:#d8c5ff;margin:0 0 14px}.card{border:1px solid #a855f766;background:var(--panel);backdrop-filter:blur(16px);border-radius:26px;padding:clamp(22px,6vw,38px);box-shadow:0 0 35px #7c3aed25,0 0 80px #0ea5e91a}.hidden{display:none!important}.kicker{font-size:.75rem;letter-spacing:.18em;text-transform:uppercase;color:#67d5ff;margin:0 0 10px}h1{font-size:clamp(2.6rem,12vw,4.5rem);line-height:.95;margin:0 0 14px;letter-spacing:-.055em;text-shadow:0 0 28px #a855f766}h2{font-size:clamp(1.45rem,6vw,2rem);line-height:1.15;margin:0 0 12px}p{color:var(--muted);line-height:1.6}.eventline{display:flex;flex-wrap:wrap;gap:8px;margin:20px 0}.pill{border:1px solid #a78bfa55;background:#ffffff08;border-radius:999px;padding:8px 11px;font-size:.82rem;color:#e9e2ff}
+label.field{display:block;font-size:.92rem;margin:18px 0 8px;color:#eee8ff}input[type=text],select{width:100%;border:1px solid #a78bfa66;border-radius:13px;background:#0d0a24;color:white;padding:14px;font:inherit;outline:none}input:focus,select:focus{border-color:var(--blue);box-shadow:0 0 0 3px #38bdf833}.options{display:grid;gap:10px;margin:22px 0}.option{display:flex;gap:11px;align-items:center;border:1px solid #b5a4ed44;border-radius:14px;padding:13px;background:#ffffff06;cursor:pointer}.option:has(input:checked){border-color:var(--blue);background:#38bdf81a;box-shadow:0 0 18px #38bdf81a}.option input{width:18px;height:18px;accent-color:#a855f7;flex-shrink:0}button{border:0;border-radius:14px;padding:14px 18px;font-weight:750;font-size:1rem;cursor:pointer}.primary{width:100%;color:#09071b;background:linear-gradient(100deg,#c084fc,#67e8f9);box-shadow:0 8px 25px #38bdf826}.secondary{background:#ffffff0d;color:white;border:1px solid #ffffff22}.actions{display:flex;gap:10px;margin-top:22px}.actions button{flex:1}.progress{height:5px;background:#ffffff17;border-radius:20px;overflow:hidden;margin-bottom:25px}.bar{height:100%;width:0;background:linear-gradient(90deg,var(--purple),var(--blue));transition:width .25s}.small{font-size:.8rem;color:#a9a0c9}.final{text-align:center;position:relative;overflow:hidden}.final h1{background:linear-gradient(90deg,#f0abfc,#7dd3fc,#ffffff);background-clip:text;-webkit-background-clip:text;color:transparent}.sub{color:#f0abfc!important;letter-spacing:.18em;text-transform:uppercase;font-weight:700;font-size:.8rem}.final .eventline{justify-content:center}.star{font-size:2.5rem;margin-bottom:12px;filter:drop-shadow(0 0 12px #c084fc)}footer{text-align:center;color:#958bb8;font-size:.75rem;margin:16px 0 0}@media(max-width:380px){body{padding:12px}.card{padding:21px}.actions{flex-direction:column}}
+</style>
+</head>
+<body>
+<main class="wrap">
+  <p class="brand">A new chapter begins</p>
+  <section class="card" id="welcome">
+    <p class="kicker">You’re invited</p><h1>AARAMBH<br><span style="color:#7dd3fc">2026</span></h1><h2>Fresher Party</h2>
+    <p>New faces. New bonds. New beginnings. ✨<br>Answer a few fun questions and unlock your welcome reveal.</p>
+    <div class="eventline"><span class="pill">📅 5 November 2026</span><span class="pill">🕙 10:00 AM</span><span class="pill">📍 Sainath College of Pharmacy</span></div>
+    <button class="primary" id="start">LET’S BEGIN →</button>
+  </section>
+  <section class="card hidden" id="quiz">
+    <div class="progress"><div class="bar" id="bar"></div></div><p class="kicker" id="step">QUESTION 1 OF 5</p><div id="questionArea"></div>
+    <div class="actions"><button class="secondary" id="back">← Back</button><button class="primary" id="next">Next →</button></div>
+    <p class="small">Your answers stay in this browser session and are not sent to a server.</p>
+  </section>
+  <section class="card final hidden" id="reveal">
+    <div class="star">✦ ✧ ✦</div><p class="sub">The wait is over</p><h1>AARAMBH<br>2026</h1><h2>Fresher Party</h2>
+    <p>WELCOME, <strong id="guestName">FUTURE STAR</strong>! 🎉</p><p>Get ready for a morning full of music, memories, friendship and unforgettable moments.</p>
+    <div class="eventline"><span class="pill">📅 Thursday, 5 November 2026</span><span class="pill">🕙 10:00 AM</span><span class="pill">📍 Sainath College of Pharmacy</span></div>
+    <p style="color:#7dd3fc;letter-spacing:.14em;font-weight:700">DRESS UP • SHOW UP • SHINE ON</p><button class="primary" id="restart">START AGAIN ↻</button><p class="small">Please confirm final event details with the organisers.</p>
+  </section>
+  <footer>Made for Aarambh 2026 · Purple-Blue Neon Edition</footer>
+</main>
+<script>
+const questions=[
+ {key:'name',title:'First things first…',text:'What should we call you?',type:'text',placeholder:'Enter your full name',required:true},
+ {key:'class',title:'Your college chapter',text:'Which class / year are you in?',type:'select',required:true,options:['B.Pharm 1st Year','B.Pharm 2nd Year','B.Pharm 3rd Year','B.Pharm 4th Year','Other']},
+ {key:'vibe',title:'Pick your party vibe',text:'What are you most excited about?',type:'radio',required:true,options:['DJ & music','Dance and performances','Meeting new friends','Photos and reels']},
+ {key:'entry',title:'Choose your entrance energy',text:'How will you arrive at Aarambh 2026?',type:'radio',required:true,options:['Royal entry 👑','Killer attitude 😎','Simple & stylish ✨','Full party mode 🔥']},
+ {key:'wish',title:'One last thing…',text:'What are you bringing to this new beginning?',type:'radio',required:true,options:['Positive vibes','Big dreams','New friendships','All of the above 💜']}
+];
+let current=0;const answers={};const welcome=document.getElementById('welcome'),quiz=document.getElementById('quiz'),reveal=document.getElementById('reveal'),area=document.getElementById('questionArea'),bar=document.getElementById('bar'),step=document.getElementById('step');
+function show(section){[welcome,quiz,reveal].forEach(s=>s.classList.add('hidden'));section.classList.remove('hidden');window.scrollTo({top:0,behavior:'smooth'});}
+function escapeHtml(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
+function render(){const q=questions[current];step.textContent=`QUESTION ${current+1} OF ${questions.length}`;bar.style.width=`${current/questions.length*100}%`;let html=`<h2>${q.title}</h2><p>${q.text}</p>`;
+ if(q.type==='text'){html+=`<label class="field" for="answer">Full name</label><input type="text" id="answer" maxlength="70" autocomplete="name" placeholder="${q.placeholder}" value="${escapeHtml(answers[q.key]||'')}">`;}
+ else if(q.type==='select'){html+='<label class="field" for="answer">Select your class / year</label><select id="answer"><option value="">Choose one…</option>'+q.options.map(o=>`<option value="${escapeHtml(o)}" ${answers[q.key]===o?'selected':''}>${escapeHtml(o)}</option>`).join('')+'</select>';}
+ else{html+='<div class="options">'+q.options.map(o=>`<label class="option"><input type="radio" name="answer" value="${escapeHtml(o)}" ${answers[q.key]===o?'checked':''}><span>${escapeHtml(o)}</span></label>`).join('')+'</div>';}
+ area.innerHTML=html;document.getElementById('back').style.visibility=current===0?'hidden':'visible';document.getElementById('next').textContent=current===questions.length-1?'UNLOCK MY INVITATION ✨':'Next →';}
+function saveAnswer(){const q=questions[current];let value;if(q.type==='radio'){const selected=area.querySelector('input[name="answer"]:checked');value=selected?selected.value:'';}else{const el=document.getElementById('answer');value=el?el.value.trim():'';}if(q.required&&!value){alert('Please answer this question to continue.');return false;}answers[q.key]=value;return true;}
+document.getElementById('start').addEventListener('click',()=>{current=0;render();show(quiz);});
+document.getElementById('back').addEventListener('click',()=>{if(current>0){if(!saveAnswer())return;current--;render();}});
+document.getElementById('next').addEventListener('click',()=>{if(!saveAnswer())return;if(current<questions.length-1){current++;render();}else{document.getElementById('guestName').textContent=answers.name||'FUTURE STAR';bar.style.width='100%';show(reveal);}});
+document.getElementById('restart').addEventListener('click',()=>{current=0;Object.keys(answers).forEach(k=>delete answers[k]);show(welcome);});
+</script>
+</body>
+</html>
